@@ -1,11 +1,12 @@
-import java.util.*;
+package Search;
+
 class binary_search
 {
     public int findsearch(int arr[],int target)
     {
         int start =0;
         int end =arr.length-1;
-        if(target<arr[end])
+        if(target>arr[end])
         {
             return -1;
         }
@@ -19,13 +20,13 @@ class binary_search
             }
             else if(target>arr[mid])
             {
-                end=mid+1;
+                start=mid+1;
             }
             else if(target==arr[mid]){
                 return mid;
             }
         }
-        return start;
+        return arr[start];
     }
 }
 
@@ -36,6 +37,6 @@ public class ceiling_number
         binary_search b = new binary_search(); 
         int arr[]={1,5,7,15,18,19,24,30,35,39,40,45,47,50};
         int target =16;
-        System.out.println("Element Found At "+b.findsearch(arr,target));
+        System.out.println("Element :  "+b.findsearch(arr,target));
     }
 }
